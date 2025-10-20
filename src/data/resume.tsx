@@ -1,7 +1,7 @@
 import { Icons } from "@/components/icons";
 import { HomeIcon, NotebookIcon, Play } from "lucide-react";
 import { FaDatabase, FaJava, FaLaravel, FaPhp, FaReact } from "react-icons/fa";
-import { SiCodeigniter } from "react-icons/si";
+import { SiCodeigniter, SiShadcnui, SiNextdotjs } from "react-icons/si";
 
 export const DATA = {
   name: "Rafi Imanullah",
@@ -39,11 +39,16 @@ export const DATA = {
       name: "CodeIgniter",
       icon: <SiCodeigniter className="size-3" />,
     },
+    {
+      name: "Shadcn UI",
+      icon: <SiShadcnui className="size-3" />,
+    },
+    {
+      name: "Next.js",
+      icon: <SiNextdotjs className="size-3" />,
+    },
   ],
-  navbar: [
-    { href: "/", icon: HomeIcon, label: "Home" },
-    { href: "/blog", icon: NotebookIcon, label: "Blog" },
-  ],
+  navbar: [{ href: "/", icon: HomeIcon, label: "Home" }],
   contact: {
     email: "rafiimanullah@gmail.com",
     tel: "+62 812-9344-1581",
@@ -62,10 +67,10 @@ export const DATA = {
 
         navbar: true,
       },
-      X: {
-        name: "X",
-        url: "https://x.com/rafizerzy",
-        icon: Icons.x,
+      Instagram: {
+        name: "Instagram",
+        url: "https://instagram.com/rafizerzy",
+        icon: Icons.instagram,
 
         navbar: true,
       },
@@ -85,7 +90,7 @@ export const DATA = {
       href: "https://cvsmartplus.com/",
       badges: [],
       location: "Remote",
-      title: "IT Intern",
+      title: "IT Intern - Internship",
       logoUrl: "/work-experience/smartplus.jpg",
       start: "Oct 2025",
       end: "Present",
@@ -105,17 +110,71 @@ export const DATA = {
         },
       ],
     },
+    // {
+    //   company: "NTT DATA Indonesia",
+    //   href: "https://www.nttdata.com/",
+    //   badges: [],
+    //   location: "Jakarta, Indonesia",
+    //   title: "Software Engineer - Full-time",
+    //   logoUrl: "/work-experience/nttdata.jpg",
+    //   start: "Sep 2025",
+    //   end: "Present",
+    //   description: [
+    //     "- Joined **NTT DATA Indonesia** as a **Software Engineer** in 2025.",
+    //     "---",
+    //     "- Responsible for designing, developing, and maintaining scalable backend services using **Java** with **Spring Boot** and **Microservices Architecture**.",
+    //     "- Collaborated with cross-functional teams to analyze business requirements and design technical solutions for enterprise-level systems.",
+    //     "- Built and optimized several RESTful APIs to ensure high performance and reliability for mission-critical applications.",
+    //     "- Contributed to integrating backend services with various internal and external systems, focusing on security, scalability, and maintainability.",
+    //     "- Performed code reviews, wrote unit and integration tests, and implemented CI/CD pipelines to ensure code quality and smooth deployments.",
+    //     "- Regularly explored and implemented best practices in Java development, Spring Boot, microservices, and cloud-native solutions to improve system robustness.",
+    //   ],
+    //   links: [
+    //     {
+    //       type: "Website",
+    //       href: "https://www.nttdata.com/",
+    //       icon: <Icons.globe className="size-3" />,
+    //     },
+    //   ],
+    // },
+    // {
+    //   company: "PT Bank Mandiri (Persero) Tbk",
+    //   href: "https://www.bankmandiri.co.id/",
+    //   badges: [],
+    //   location: "Jakarta, Indonesia",
+    //   title: "Java Developer - Contract",
+    //   logoUrl: "/work-experience/bankmandiri.png",
+    //   start: "2024",
+    //   end: "2025",
+    //   description: [
+    //     "- Joined **PT Bank Mandiri (Persero) Tbk** as a **Java Developer** in 2025.",
+    //     "---",
+    //     "- Responsible for designing, developing, and maintaining scalable backend services using **Java** with **Spring Boot** and **Microservices Architecture**.",
+    //     "- Collaborated with cross-functional teams to analyze business requirements and design technical solutions for enterprise-level systems.",
+    //     "- Built and optimized several RESTful APIs to ensure high performance and reliability for mission-critical applications.",
+    //     "- Contributed to integrating backend services with various internal and external systems, focusing on security, scalability, and maintainability.",
+    //     "- Performed code reviews, wrote unit and integration tests, and implemented CI/CD pipelines to ensure code quality and smooth deployments.",
+    //     "- Regularly explored and implemented best practices in Java development, Spring Boot, microservices, and cloud-native solutions to improve system robustness.",
+    //   ],
+    //   links: [
+    //     {
+    //       type: "Website",
+    //       href: "https://www.nttdata.com/",
+    //       icon: <Icons.globe className="size-3" />,
+    //     },
+    //   ],
+    // },
     {
       company: "Luckynetwork SEA",
       href: "https://www.luckynetwork.net/en",
       badges: [],
       location: "Remote",
-      title: "Java Developer",
+      title: "Java Developer - Self-employed",
       logoUrl: "/work-experience/lucky.jpg",
-      start: "Feb 2021",
-      end: "Jan 2025",
+      start: "2021",
+      end: "2025",
       description: [
-        "- Joined **LuckyNetwork SEA** as a **Moderator** in Feb 2021.",
+        "- Joined **LuckyNetwork SEA** as a **Moderator** in 2021.",
         "---",
         "- Started maintaining a safe and fun environment for players as a **Minecraft Server Moderator**.",
         "- Enforced server rules, issued warnings, mutes, kicks, and bans when necessary.",
@@ -148,8 +207,7 @@ export const DATA = {
     {
       school: "Horizon University Indonesia",
       href: "https://horizon.ac.id/",
-      degree:
-        "Bachelor's of Technology in Computer Science Engineering | 3.54 GPA",
+      degree: "Bachelor of Computer Science | 3.54 GPA",
       logoUrl: "/horizon.png",
       start: "2022",
       end: "2026",
@@ -166,8 +224,8 @@ export const DATA = {
   projects: [
     {
       title: "Smartplus Indonesia",
-      href: "https://github.com/ChiragAgg5k/prabhawatt",
-      dates: "Oct 2025 - Present",
+      href: "#",
+      dates: "2025 - Present",
       active: true,
       description:
         "A website for **PT Smartplus Indonesia** to showcase their company profile, products, and services.",
@@ -187,65 +245,116 @@ export const DATA = {
       image: "/projects/smartplus.png",
     },
     {
-      title: "Cal Buddy",
-      href: "https://cal-buddy.vercel.app/",
-      dates: "Oct 2025 - Present",
+      title: "Edulify",
+      href: "https://edulify-landing.vercel.app/",
+      dates: "2024",
       active: true,
       description:
-        "Cal Buddy is a smart calendar assistant that helps you schedule, manage, and chat with your calendar. Boost your productivity with AI-powered task management.",
-      technologies: ["Next.js", "Typescript", "CopilotKit", "Appwrite"],
+        "**Edulify** is a modern online learning platform that helps you learn smarter with interactive and accessible courses for everyone.",
+      technologies: ["PHP", "Laravel", "Tailwind", "MySQL"],
       links: [
         {
           type: "Website",
-          href: "https://cal-buddy.vercel.app/",
+          href: "https://edulify-landing.vercel.app/",
           icon: <Icons.globe className="size-3" />,
         },
         {
           type: "Source",
-          href: "https://github.com/ChiragAgg5k/cal-buddy",
+          href: "https://github.com/rafizeazy/Edulify",
           icon: <Icons.github className="size-3" />,
         },
       ],
-      image: "/projects/cal-buddy.png",
+      image: "/projects/edulify.png",
     },
     {
-      title: "BU News",
-      href: "https://github.com/ChiragAgg5k/bu-news-android",
-      dates: "April 2023 - March 2023",
+      title: "SIBAS",
+      href: "https://sibas-landing.vercel.app",
+      dates: "2023 - 2024",
       active: true,
       description:
-        "A news sharing platform targeting university students in particular, aiming to reduce spread of misinformation.",
-      technologies: ["Java", "XML", "Firebase", "Android Studio"],
+        "**SIBAS** is a website for managing trash reports for Dinas Lingkungan Hidup Kota Karawang. Allows users to report trash issues and track their resolution.",
+      technologies: ["PHP", "Laravel", "Tailwind", "MySQL"],
       links: [
         {
-          type: "Play Store",
-          href: "https://play.google.com/store/apps/details?id=com.chiragagg5k.bu_news_android",
-          icon: <Play className="size-3" />,
+          type: "Website",
+          href: "https://sibas-landing.vercel.app",
+          icon: <Icons.globe className="size-3" />,
         },
         {
           type: "Source",
-          href: "https://github.com/ChiragAgg5k/bu-news-android",
+          href: "https://github.com/rafizeazy/sibasv2",
           icon: <Icons.github className="size-3" />,
         },
       ],
-      image: "/projects/bu-news.png",
+      image: "/projects/sibas.png",
     },
     {
-      title: "Asclepius",
-      href: "https://github.com/ChiragAgg5k/asclepius",
-      dates: "Dec 2022 - Jan 2023",
+      title: "HorizonDesk",
+      href: "https://github.com/rafizeazy/horizondesk",
+      dates: "2024",
       active: true,
       description:
-        "A desktop application developed in Python and Custom Tkinter to view and request medicines from the Wellness center, check medicine availability, and order medicines directly.",
-      technologies: ["Python", "Tkinter", "SQLite"],
+        "**HorizonDesk** is a ticketing application for managing student and lecturer requests in **Horizon University**.",
+      technologies: ["Dart", "Flutter", "Firebase"],
       links: [
         {
           type: "Source",
-          href: "https://github.com/ChiragAgg5k/asclepius",
+          href: "https://github.com/rafizeazy/horizondesk",
           icon: <Icons.github className="size-3" />,
         },
       ],
-      image: "/projects/asclepius.png",
+      image: "/projects/horizondesk1.png",
+    },
+    {
+      title: "Blocky Core",
+      href: "https://github.com/rafizeazy/blocky-core",
+      dates: "2021",
+      active: false,
+      description:
+        "**Blocky Core** is a Minecraft server core plugin that provides essential features for server management, player interactions, and game modes.",
+      technologies: ["Java", "Gradle", "Spigot API", "Bukkit API"],
+      links: [
+        {
+          type: "Source",
+          href: "https://github.com/rafizeazy/blocky-core",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "/projects/blockycore.png",
+    },
+    {
+      title: "Atreus",
+      href: "https://github.com/rafizeazy/atreus",
+      dates: "2022",
+      active: false,
+      description:
+        "**Atreus** is a Minecraft server core plugin that utilizes the micro-service architecture and gRPC to be as performant and scaleable as possible.",
+      technologies: ["Java"],
+      links: [
+        {
+          type: "Source",
+          href: "https://github.com/rafizeazy/atreus",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "/projects/luckycore.png",
+    },
+    {
+      title: "LuckyEssential",
+      href: "https://github.com/rafizeazy/luckyessential",
+      dates: "2023",
+      active: false,
+      description:
+        "Lightweight yet feature-rich plugin designed to improve the gameplay experience and moderation experience for Minecraft servers.",
+      technologies: ["Java"],
+      links: [
+        {
+          type: "Source",
+          href: "https://github.com/rafizeazy/luckyessential",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "/projects/luckyessential.png",
     },
   ],
   positions: [

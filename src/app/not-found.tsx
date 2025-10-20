@@ -11,6 +11,7 @@ export default function NotFound() {
         portfolio. <br />
         Can you please check the URL or <a href="/">go back to home</a>?
       </p>
+
       <a href={"/"}>
         <Button className="mt-4" variant={"outline"}>
           Go back home

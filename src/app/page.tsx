@@ -1,18 +1,14 @@
-import ContactMeForm from "@/components/contact-me-form";
-import { HackathonCard } from "@/components/hackathon-card";
 import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
-import { ProjectCard } from "@/components/project-card";
 import { ResumeCard } from "@/components/resume-card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import Marquee from "@/components/ui/marquee";
 import { TracingBeam } from "@/components/ui/tracing-beam";
 import { DATA } from "@/data/resume";
 import { Notebook } from "lucide-react";
-import Image from "next/image";
 import Markdown from "react-markdown";
+import { ProjectsGrid } from "@/components/projects-grid";
 
 const BLUR_FADE_DELAY = 0.04;
 
@@ -142,140 +138,45 @@ export default function Page() {
             ))}
           </div>
         </section>
-        <section id="projects">
-          <div className="space-y-12 w-full py-12">
-            <BlurFade delay={BLUR_FADE_DELAY * 11}>
-              <div className="flex flex-col items-center justify-center space-y-4 text-center">
-                <div className="space-y-2">
-                  <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                    Projects
-                  </h2>
-                  <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                    I like to build projects. I have built a lot of projects,
-                    here are just some of my{" "}
-                    <span className="font-bold">favorites</span>.
-                  </p>
-                </div>
-              </div>
-            </BlurFade>
-            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-[800px] mx-auto">
-              {DATA.projects.map((project, id) => (
-                <BlurFade
-                  key={project.title}
-                  delay={BLUR_FADE_DELAY * 12 + id * 0.05}
-                >
-                  <ProjectCard
-                    href={project.href}
-                    key={project.title}
-                    title={project.title}
-                    description={project.description}
-                    dates={project.dates}
-                    tags={project.technologies}
-                    image={project.image}
-                    links={project.links}
-                  />
-                </BlurFade>
-              ))}
-            </div>
-          </div>
-        </section>
-        <section id="positions">
-          <div className="space-y-12 w-full py-12">
-            <BlurFade delay={BLUR_FADE_DELAY * 13}>
-              <div className="flex flex-col items-center justify-center space-y-4 text-center">
-                <div className="space-y-2">
-                  <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                    Positions of Responsibility
-                  </h2>
-                  <p className="text-muted-foreground md:text-base/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                    I believe in the power of collaboration and teamwork. So I
-                    like to keep myself busy while working in different
-                    <span className="font-bold"> communities</span> and{" "}
-                    <span className="font-bold">projects</span>. Here are some
-                    of the positions I have held.
-                  </p>
-                </div>
-              </div>
-            </BlurFade>
-            <BlurFade delay={BLUR_FADE_DELAY * 14}>
-              <ul className="mb-4 ml-4 divide-y divide-dashed border-l">
-                {DATA.positions.map((position, id) => (
-                  <BlurFade
-                    key={position.title + position.dates}
-                    delay={BLUR_FADE_DELAY * 15 + id * 0.05}
-                  >
-                    <HackathonCard
-                      title={position.title}
-                      description={position.description}
-                      location={position.location}
-                      dates={position.dates}
-                      image={position.image}
-                      links={position.links}
-                    />
-                  </BlurFade>
-                ))}
-              </ul>
-            </BlurFade>
-          </div>
-        </section>
-        <section id="achievements">
-          <div className="space-y-12 w-full py-12">
-            <BlurFade delay={BLUR_FADE_DELAY * 13}>
-              <div className="flex flex-col items-center justify-center space-y-4 text-center">
-                <div className="space-y-2">
-                  <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                    Achievements
-                  </h2>
-                  <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                    From going to Vietnam to participating in Hackathons, I like
-                    to keep exploring and learning new things.
-                  </p>
-                </div>
-              </div>
-            </BlurFade>
-            <BlurFade delay={BLUR_FADE_DELAY * 14}>
-              <Marquee>
-                {DATA.achievements.map((achievement, id) => (
-                  <div key={achievement.title + id}>
-                    <div>
-                      <img
-                        className="w-72 h-48 object-cover"
-                        src={achievement.image}
-                        alt={achievement.title}
-                        width={400}
-                        height={400}
-                      />
-                    </div>
-                  </div>
-                ))}
-              </Marquee>
-              <div className="pointer-events-none absolute inset-y-0 left-0 w-1/6 bg-gradient-to-r from-white dark:from-background"></div>
-              <div className="pointer-events-none absolute inset-y-0 right-0 w-1/6 bg-gradient-to-l from-white dark:from-background"></div>
-            </BlurFade>
-          </div>
-        </section>
+
+        {/* Projects: awalnya 4, "Show more" bertahap, reveal saat discroll */}
+        <ProjectsGrid
+          projects={DATA.projects as any}
+          title="Projects"
+          subtitle={
+            <>
+              I like to build projects. I have built a lot of projects, here are
+              just some of my <span className="font-bold">favorites</span>.
+            </>
+          }
+          initialCount={4}
+          step={4}
+          blurDelay={BLUR_FADE_DELAY}
+        />
+
+        {/* Contact */}
         <section id="contact">
           <div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full py-12">
             <BlurFade delay={BLUR_FADE_DELAY * 16}>
-              <div className="space-y-0">
+              <div className="space-y-4">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
                   Get in Touch
                 </h2>
-                <ContactMeForm />
                 <p className="mx-auto max-w-[600px] text-muted-foreground text-sm/relaxed md:text-base/relaxed">
-                  Or just want to have a casual chat? you can just shoot me a dm
-                  on{" "}
+                  I'm always open to discussing new projects, creative ideas, or
+                  opportunities to be part of your visions. Feel free to reach
+                  out through{" "}
                   <a
-                    href={DATA.contact.social.X.url}
+                    href={DATA.contact.social.Instagram.url}
                     className="text-foreground hover:underline"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Twitter
+                    Instagram
                   </a>{" "}
                   or{" "}
                   <a
-                    href={DATA.contact.social.X.url}
+                    href={DATA.contact.social.LinkedIn.url}
                     className="text-foreground hover:underline"
                     target="_blank"
                     rel="noopener noreferrer"
