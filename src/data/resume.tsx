@@ -86,14 +86,41 @@ export const DATA = {
 
   work: [
     {
+      company: "PT Zenit Inti Teknologi",
+      href: "https://zenitinti.com/",
+      badges: [],
+      location: "Jakarta, Indonesia",
+      title: "Backend Developer - Internship",
+      logoUrl: "/work-experience/zit.png",
+      start: "2025",
+      end: "Present",
+      description: [
+        "- Joined **PT Zenit Inti Teknologi** as a **Backend Developer** in 2025.",
+        "---",
+        "- Responsible for designing, developing, and maintaining scalable backend services using **Java** with **Spring Boot** and **Microservices Architecture**.",
+        "- Collaborated with cross-functional teams to analyze business requirements and design technical solutions for enterprise-level systems.",
+        "- Built and optimized several RESTful APIs to ensure high performance and reliability for mission-critical applications.",
+        "- Contributed to integrating backend services with various internal and external systems, focusing on security, scalability, and maintainability.",
+        "- Performed code reviews, wrote unit and integration tests, and implemented CI/CD pipelines to ensure code quality and smooth deployments.",
+        "- Regularly explored and implemented best practices in Java development, Spring Boot, microservices, and cloud-native solutions to improve system robustness.",
+      ],
+      links: [
+        {
+          type: "Website",
+          href: "https://zenitinti.com/",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+    },
+    {
       company: "PT Smartplus Indonesia",
       href: "https://cvsmartplus.com/",
       badges: [],
       location: "Remote",
       title: "IT Intern - Internship",
       logoUrl: "/work-experience/smartplus.jpg",
-      start: "Oct 2025",
-      end: "Present",
+      start: "2025",
+      end: "2025",
       description: [
         "- Joined **PT Smartplus Indonesia** as an **IT Intern** in 2025.",
         "---",
